@@ -1,35 +1,52 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
-    context: __dirname + '/src',
-    entry: './index',
+    context: path.join(__dirname, '/src'),
+    entry: './index.js',
     output: {
-        path: __dirname + '/dist',
+        path: path.join(__dirname, '/dist'),
         filename: 'bundle.js'
     },
     resolve: {
-        modulesDirectories: ["node_modules", "bower_components"]
+        modulesDirectories: ["bower_components", "node_modules"]
     },
-    loaders: [
-        {
-            test: /\.js$/,
-            loader: 'babel?preset[]=es2015&preset[]=stage-0'
-        },
-        {
-            test: /\.html$/,
-            loader: 'html'
-        }
-    ],
+    module: {
+        loaders: [
+            {
+                test: /\.js$/,
+                loaders: ['babel?presets[]=es2015&presets[]=stage-0']
+            },
+            {
+                test: /\.html$/,
+                loaders: ['html']
+            },
+            {
+                test: /\.css$/,
+                loaders: ['css']
+            },
+            { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff" },
+            { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
+        ]
+    },
     plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery",
+            _: "lodash"
+        }),
         new HtmlWebpackPlugin({
-        template: __dirname + '/src/index.html'
+            template: path.join(__dirname, '/src/index.html'),
+            inject: 'body'
         }),
         new webpack.ResolverPlugin(
-            new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
+            new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('.bower.json', ['main'])
         )
     ],
+    devtool : 'inline-source-map',
     devServer: {
-        contentBase: __dirname + '/dist'
+        contentBase: 'dist/'
     }
 };
