@@ -1,0 +1,22 @@
+<div class="container center-block text-center">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="row">
+                <h2>
+                    {{$ctrl.lesson.lessonName}}
+                </h2>
+            </div>
+            <div class="row">
+                <div ng-if="$ctrl.selectedPart.type === 'theory'" ng-bind-html="$ctrl.selectedPart.value"></div>
+            </div>
+            <div class="row">
+                <button class="btn btn-default" ng-click="$ctrl.nextPart()" ng-disabled="$ctrl.lastPartSelected()">
+                    Дальше
+                </button>
+                <button class="btn btn-default" ui-sref="index()">
+                    Завершить урок
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
