@@ -10,6 +10,27 @@ export default [
                     {
                         type: 'theory',
                         value: 'sdf'
+                    },
+                    {
+                        type: 'controlQuestions',
+                        value: [
+                            {
+                                question: 'some question $',
+                                answers: ['fuck']
+                            },
+                            {
+                                question: 'some question $',
+                                answers: ['fuck']
+                            },
+                            {
+                                question: 'some question $',
+                                answers: ['fuck']
+                            },
+                            {
+                                question: 'some question $',
+                                answers: ['fuck']
+                            }
+                        ]
                     }
                 ]
             }

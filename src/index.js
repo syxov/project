@@ -7,10 +7,12 @@ require('jquery');
 require('angular-ui-router');
 require('./pages/module');
 require('./config/module');
+require('./components/module');
 
 angular.module('lessonProject', [
     'lessonProject.config',
     'lessonProject.pages',
+    'lessonProject.components',
     'ui.router',
     'ngSanitize'
 ]).config(function ($stateProvider, $urlRouterProvider) {
