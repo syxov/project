@@ -24,7 +24,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loaders: ['css']
+                loaders: ['style', 'css']
             },
             { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff" },
             { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
@@ -35,7 +35,7 @@ module.exports = {
             $: "jquery",
             jQuery: "jquery",
             "window.jQuery": "jquery",
-            _: "lodash"
+            _: "underscore"
         }),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, '/src/index.html'),
@@ -47,6 +47,7 @@ module.exports = {
     ],
     devtool : 'inline-source-map',
     devServer: {
-        contentBase: 'dist/'
+        contentBase: 'dist/',
+        hot: true
     }
 };

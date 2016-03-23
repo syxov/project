@@ -1,1 +1,12 @@
-<p>sdf</p>
+<div class="container">
+    <div class="row" ng-repeat="section in $ctrl.config">
+        <h2>{{section.sectionName}}</h2>
+        <ul class="list-unstyled">
+            <li ng-repeat="lesson in section.lessons">
+                <button class="btn btn-default" ui-sref="lesson({sectionId: section.id, lessonId: lesson.id})">
+                    {{lesson.lessonName}}
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
