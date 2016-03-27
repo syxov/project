@@ -211,7 +211,45 @@ export default [
                         value: require('./configs/introductionToSocialPsychology.html')
                     }
                 ]
+            },
+            {
+                id: 2,
+                lessonName: 'Общение',
+                parts: [
+                    {
+                        type: 'theory',
+                        value: require('./configs/talking.html')
+                    }
+                ]
+
+            },
+            {
+                id: 3,
+                lessonName: 'Психология малых групп',
+                parts: [
+                    {
+                        type: 'theory',
+                        value: require('./configs/psychologyOfSmallGroups.html')
+                    }
+                ]
+            },
+            {
+                id: 4,
+                lessonName: 'Конфликт',
+                parts: [
+                    {
+                        type: 'theory',
+                        value: require('./configs/conflict.html')
+                    }
+                ]
             }
+        ]
+    },
+    {
+        id: 5,
+        sectionName: 'Основы инженерной психологии',
+        lessons: [
+            
         ]
     }
 ];
