@@ -145,6 +145,72 @@ export default [
                         value: require('./configs/introductionToTheIndividualPsychology.html')
                     }
                 ]
+            },
+            {
+                id: 2,
+                lessonName: 'Темперамент',
+                parts: [
+                    {
+                        type:'theory',
+                        value: require('./configs/temperament.html')
+                    }
+                ]
+            },
+            {
+                id: 3,
+                lessonName: 'Характер',
+                parts: [
+                    {
+                        type: 'theory',
+                        value: require('./configs/character.html')
+                    }
+                ]
+            },
+            {
+                id: 4,
+                lessonName: 'Способности',
+                parts: [
+                    {
+                        type: 'theory',
+                        value: require('./configs/abilities.html')
+                    }
+                ]
+            },
+            {
+                id: 5,
+                lessonName: 'Эмоции и чувства',
+                parts: [
+                    {
+                        type: 'theory',
+                        value: require('./configs/emotionsAndFeelings.html')
+                    }
+                ]
+            },
+            {
+                id: 6,
+                lessonName: 'Воля',
+                parts: [
+                    {
+                        type:'theory',
+                        value: require('./configs/volition.html')
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 4,
+        sectionName: 'Социальная психология',
+        lessons: [
+            {
+                id: 1,
+                lessonName: 'Введение в социальную психологию',
+                parts: [
+                    {
+                        type: 'theory',
+                        value: require('./configs/introductionToSocialPsychology.html')
+                    }
+                ]
             }
         ]
     }
