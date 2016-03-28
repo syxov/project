@@ -249,7 +249,72 @@ export default [
         id: 5,
         sectionName: 'Основы инженерной психологии',
         lessons: [
-            
+            {
+                id: 1,
+                lessonName: 'Психология трудовой деятельности',
+                parts: [
+                    {
+                        type: 'theory',
+                        value: require('./configs/psychologyOfWork.html')
+                    }
+                ]
+            },
+            {
+                id: 2,
+                lessonName: 'Проблема взаимодествия человека и техники',
+                parts: [
+                    {
+                        type: 'theory',
+                        value: require('./configs/humanAndTechnologyInteractionProblem.html')
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 6,
+        sectionName: 'Педагогическая психология',
+        lessons: [
+            {
+                id: 1,
+                lessonName: 'Введение в педагогическую психологию',
+                parts: [
+                    {
+                        type: 'theory',
+                        value: require('./configs/introductionToEducationalPsychology.html')
+                    }
+                ]
+            },
+            {
+                id: 2,
+                lessonName: 'Педагог как субъект учебной деятельности',
+                parts: [
+                    {
+                        type: 'theory',
+                        value: require('./configs/theTeacherAsASubjectOfEducationalActivity.html')
+                    }
+                ]
+            },
+            {
+                id: 3,
+                lessonName: 'Общая характеристика учбеной деятельности',
+                parts: [
+                    {
+                        type: 'theory',
+                        value: require('./configs/generalCharacteristicsOfTheLearningActivities.html')
+                    }
+                ]
+            },
+            {
+                id: 4,
+                lessonName: 'Психология педагогического взаимодействия',
+                parts: [
+                    {
+                        type: 'theory',
+                        value: require('./configs/psychologyTeacherInteraction.html')
+                    }
+                ]
+            }
         ]
     }
 ];
