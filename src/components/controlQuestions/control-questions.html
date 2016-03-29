@@ -1,3 +1,4 @@
+<h3>Контрольные вопросы</h3>
 <ol ng-if-start="$ctrl.questionPart">
     <li ng-repeat="question in $ctrl.questions" ng-init="questionIndex = $index">
         <span ng-repeat-start="part in $ctrl.splitQuestion(question.question) track by $index">
@@ -9,7 +10,7 @@
 
 <div class="row" ng-if-end>
     <button class="btn btn-default" ng-click="$ctrl.endTest()">
-        Закончить тест
+        Готово
     </button>
 </div>
 

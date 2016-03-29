@@ -7,7 +7,7 @@
                 </h2>
             </div>
             <div class="row">
-                <div ng-if="$ctrl.selectedPart.type === 'theory'" ng-bind-html="$ctrl.selectedPart.value"></div>
+                <div ng-if="$ctrl.selectedPart.type === 'theory'" ng-bind-html="$ctrl.selectedPart.value" class="theory-block"></div>
                 <control-questions ng-if="$ctrl.selectedPart.type === 'controlQuestions'" questions="$ctrl.selectedPart.value"></control-questions>
             </div>
             <div class="row">

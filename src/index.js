@@ -8,6 +8,7 @@ require('angular-ui-router');
 require('./pages/module');
 require('./config/module');
 require('./components/module');
+require('./styles/source.less');
 
 angular.module('lessonProject', [
     'lessonProject.config',
