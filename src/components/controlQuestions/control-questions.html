@@ -1,6 +1,6 @@
 <ol ng-if-start="$ctrl.questionPart">
     <li ng-repeat="question in $ctrl.questions" ng-init="questionIndex = $index">
-        <span ng-repeat-start="part in $ctrl.splitQuestion(question.question)">
+        <span ng-repeat-start="part in $ctrl.splitQuestion(question.question) track by $index">
             {{part}}
         </span>
         <input ng-repeat-end ng-model="$ctrl.answers[questionIndex][$index]" ng-if="!$last" type="text">
@@ -15,7 +15,7 @@
 
 <ol ng-if="!$ctrl.questionPart">
     <li ng-repeat="question in $ctrl.questions" ng-init="questionIndex = $index">
-        <span ng-repeat-start="part in $ctrl.splitQuestion(question.question)">
+        <span ng-repeat-start="part in $ctrl.splitQuestion(question.question) track by $index">
             {{part}}
         </span>
         <s ng-if="$ctrl.incorrectAnswer($ctrl.answers[questionIndex][$index], $ctrl.questions[questionIndex].answers[$index])" class="bg-danger">
