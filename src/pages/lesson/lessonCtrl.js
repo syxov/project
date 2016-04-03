@@ -1,7 +1,7 @@
 export default function lessonCtrl($state, lessonsConfig) {
     const {sectionId, lessonId} = $state.params;
-    this.section = _.findWhere(lessonsConfig, {id: +sectionId});
-    this.lesson = _.findWhere(this.section.lessons, {id: +lessonId});
+    this.section = _.find(lessonsConfig, ({id}) => id === +sectionId);
+    this.lesson = _.find(this.section.lessons, ({id}) => id === +lessonId);
     this.selectedPart = this.lesson.parts[0];
     let selectedPartIndex = 0;
 

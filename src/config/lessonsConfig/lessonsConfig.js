@@ -34,7 +34,7 @@ export default [
                                 question: 'Три сферы в психологии человека: $, $, $.',
                                 answers: ['сознание', 'предсознание', 'бессознательное'],
                                 options: {
-                                    orChoice: [0, 1, 2]
+                                    orChoice: true
                                 }
                             }
                         ]
@@ -72,7 +72,7 @@ export default [
                                 question: 'Опросные методы включают: $, $.',
                                 answers: ['интервью', 'анкетирование'],
                                 options: {
-                                    orChoice: [0, 1]
+                                    orChoice: true
                                 }
                             }
                         ]
@@ -213,7 +213,7 @@ export default [
                                 question: 'Абсолютный порог ощущений делится на $ и $.',
                                 answers: ['максимальный', 'минимальный'],
                                 options: {
-                                    orChoice: [0, 1]
+                                    orChoice: true
                                 }
                             },
                             {
@@ -251,7 +251,7 @@ export default [
                                 question: 'Виды восприятия по участию воли: $ и $.',
                                 answers: ['произвольное', 'непроизвольное'],
                                 options: {
-                                    orChoice: [0, 1]
+                                    orChoice: true
                                 }
                             },
                             {
@@ -289,7 +289,7 @@ export default [
                                 question: 'Виды запоминания: $, $, $, $.',
                                 answers: ['произвольное', 'непроизвольное', 'механическое', 'осмысленное'],
                                 options: {
-                                    orChoice: [0, 1, 2, 3]
+                                    orChoice: true
                                 }
                             },
                             {
@@ -327,7 +327,7 @@ export default [
                                 question: '$ и $ всегда протекает в единстве.',
                                 answers: ['Синтез', 'анализ'],
                                 options: {
-                                    orChoice: [0, 1]
+                                    orChoice: true
                                 }
                             },
                             {
@@ -365,7 +365,7 @@ export default [
                                 question: 'Приемы изменения величины объекта: $ и $.',
                                 answers: ['гипербола', 'литота'],
                                 options: {
-                                    orChoice: [0, 1]
+                                    orChoice: true
                                 }
                             },
                             {
@@ -510,7 +510,7 @@ export default [
                                 question: 'Для того, чтобы задатки реализовались в способности, необходимо $ и $.',
                                 answers: ['обучение', 'воспитание'],
                                 options: {
-                                    orChoice: [0, 1]
+                                    orChoice: true
                                 }
                             },
                             {
@@ -548,7 +548,7 @@ export default [
                                 question: 'Биологические реакции на страх: $, $ и $.',
                                 answers: ['ступор', 'бегство', 'агрессия'],
                                 options: {
-                                    orChoice: [0, 1, 2]
+                                    orChoice: true
                                 }
                             },
                             {
@@ -646,7 +646,7 @@ export default [
                                 question: 'Виды по целям общения: $ и $.',
                                 answers: ['биологические', 'социальные'],
                                 options: {
-                                    orChoice: [0, 1]
+                                    orChoice: true
                                 }
                             },
                             {
@@ -697,7 +697,7 @@ export default [
                                 question: 'Социальные роли могут быть $ и $.',
                                 answers: ['формальные', 'неформальные'],
                                 options: {
-                                    orChoice: [0, 1]
+                                    orChoice: true
                                 }
                             },
                             {
@@ -776,7 +776,7 @@ export default [
                                 question: 'Виды трудовой деятельности по содержанию делаться на $ и $.',
                                 answers: ['физический', 'умственный'],
                                 options: {
-                                    orChoice: [0, 1]
+                                    orChoice: true
                                 }
                             }
                         ]
@@ -810,7 +810,7 @@ export default [
                                 question: 'Виды СЧМС по характеристикам человека: $ и $.',
                                 answers: ['моносистемы', 'полисистемы'],
                                 options: {
-                                    orChoice: [0, 1]
+                                    orChoice: true
                                 }
                             }
                         ]
@@ -850,7 +850,7 @@ export default [
                                 question: 'Педагогическая психология изучает закономерности овладения $, $, $ и исследует индивидуальные различия в этих процессах.',
                                 answers: ['знаний', 'умений', 'навыков'],
                                 options: {
-                                    orChoice: [0, 1, 2]
+                                    orChoice: true
                                 }
                             },
                             {

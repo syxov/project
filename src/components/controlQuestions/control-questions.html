@@ -15,13 +15,13 @@
 </div>
 
 <ol ng-if="!$ctrl.questionPart">
-    <li ng-repeat="question in $ctrl.questions" ng-init="questionIndex = $index">
-        <span ng-repeat-start="part in $ctrl.splitQuestion(question.question) track by $index">
+    <li ng-repeat="result in $ctrl.results" ng-init="questionIndex = $index">
+        <span ng-repeat-start="part in result track by $index" ng-if="$even">
             {{part}}
         </span>
-        <s ng-if="$ctrl.incorrectAnswer($ctrl.answers[questionIndex][$index], $ctrl.questions[questionIndex].answers[$index])" class="bg-danger">
-            {{$ctrl.answers[questionIndex][$index]}}
+        <s ng-if="$odd && !part.isCorrectAnswer" class="bg-danger">
+            {{part.userAnswer || "Nothing has been inputed"}}
         </s>
-        <span ng-repeat-end class="bg-success">{{$ctrl.questions[questionIndex].answers[$index]}}</span>
+        <span ng-if="$odd" ng-repeat-end class="bg-success">{{part.correctAnswer}}</span>
     </li>
 </ol>

@@ -1,6 +1,6 @@
 require('angular');
 require('angular-sanitize');
-require('underscore');
+require('lodash');
 require('bootstrap/dist/css/bootstrap.min.css');
 require('angular-bootstrap');
 require('jquery');

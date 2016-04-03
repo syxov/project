@@ -46,7 +46,7 @@ module.exports = {
             $: "jquery",
             jQuery: "jquery",
             "window.jQuery": "jquery",
-            _: "underscore"
+            _: "lodash"
         }),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, '/src/index.html'),
