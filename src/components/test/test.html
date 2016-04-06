@@ -1,12 +1,19 @@
-<div ng-if-start="$ctrl.questionPart">
-    <ul class="pagination row">
-        <li ng-repeat="question in $ctrl.questions" ng-class="{active: question === $ctrl.activeQuestion}" ng-click="$ctrl.selectQuestion(question)">
-            <a>
-                {{$index + 1}}
-            </a>
-        </li>
-    </ul>
-    <div class="row">
+<div ng-if="$ctrl.questionPart" class="test">
+    <div class="navigation">
+        <button
+            class="btn btn-default"
+            ng-repeat="question in $ctrl.questions"
+            ng-class="{
+                'btn-primary': question === $ctrl.activeQuestion,
+                'btn-success': $ctrl.userAnsweredSmth(question) && question !== $ctrl.activeQuestion
+            }"
+            ng-click="$ctrl.selectQuestion(question)">
+            {{$index + 1}}
+        </button>
+        <button class="btn btn-default" ng-disabled="$ctrl.isLastQuestionSelected()" ng-click="$ctrl.selectNextQuestion()">Следуюший вопрос</button>
+        <button class="btn btn-default" ng-click="$ctrl.endTest()">Закончить тест</button>
+    </div>
+    <div>
         <h3>{{$ctrl.activeQuestion.question}}</h3>
         <ol>
             <li ng-repeat="answer in $ctrl.activeQuestion.answers">
@@ -17,14 +24,8 @@
     </div>
 </div>
 
-<div class="row" ng-if-end>
-    <button class="btn btn-default" ng-click="$ctrl.endTest()">
-        Готово
-    </button>
-</div>
-
 <div ng-if="!$ctrl.questionPart">
-    <div class="row" ng-repeat="question in $ctrl.questions">
+    <div ng-repeat="question in $ctrl.questions">
         <h3>{{$ctrl.activeQuestion.question}}</h3>
         <ol>
             <li ng-repeat="answer in question.answers">

@@ -15,7 +15,8 @@ angular.module('lessonProject', [
     'lessonProject.pages',
     'lessonProject.components',
     'ui.router',
-    'ngSanitize'
+    'ngSanitize',
+    'ui.bootstrap'
 ]).config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider

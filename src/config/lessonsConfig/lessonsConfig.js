@@ -7,10 +7,10 @@ export default [
                 id: 1,
                 lessonName: 'Общее представление о психологии как о науке',
                 parts: [
-                        {
-                            type: 'theory',
-                            value: require('./configs/introduceToPsihology.html')
-                        },
+                    {
+                        type: 'theory',
+                        value: require('./configs/introduceToPsihology.html')
+                    },
                     {
                         type: 'controlQuestions',
                         value: [
@@ -45,69 +45,9 @@ export default [
                 id: 2,
                 lessonName: 'Методы исследования в психологии',
                 parts: [
-                    // {
-                    //     type: 'theory',
-                    //     value: require('./configs/metods.html')
-                    // },
                     {
-                        type: 'test',
-                        value: [{
-                            question: 'WTF',
-                            answers: [
-                                {
-                                    value: '1',
-                                    isCorrect: true
-                                },
-                                {
-                                    value: '2'
-                                },
-                                {
-                                    value: '3'
-                                }
-                            ]
-                        },{
-                            question: 'WTF',
-                            answers: [
-                                {
-                                    value: '1',
-                                    isCorrect: true
-                                },
-                                {
-                                    value: '2'
-                                },
-                                {
-                                    value: '3'
-                                }
-                            ]
-                        },{
-                            question: 'WTF',
-                            answers: [
-                                {
-                                    value: '1',
-                                    isCorrect: true
-                                },
-                                {
-                                    value: '2'
-                                },
-                                {
-                                    value: '3'
-                                }
-                            ]
-                        },{
-                            question: 'WTF',
-                            answers: [
-                                {
-                                    value: '1',
-                                    isCorrect: true
-                                },
-                                {
-                                    value: '2'
-                                },
-                                {
-                                    value: '3'
-                                }
-                            ]
-                        }]
+                        type: 'theory',
+                        value: require('./configs/metods.html')
                     },
                     {
                         type: 'controlQuestions',
@@ -206,6 +146,72 @@ export default [
                                 answers: ['Мотив']
                             }
                         ]
+                    }
+                ]
+            },
+            {
+                id: 5,
+                lessonName: 'Тест',
+                parts: [{
+                    type: 'test',
+                    value: [
+                        {
+                            question: 'WTF',
+                            answers: [
+                                {
+                                    value: '1',
+                                    isCorrect: true
+                                },
+                                {
+                                    value: '2'
+                                },
+                                {
+                                    value: '3'
+                                }
+                            ]
+                        }, {
+                            question: 'WTF',
+                            answers: [
+                                {
+                                    value: '1',
+                                    isCorrect: true
+                                },
+                                {
+                                    value: '2'
+                                },
+                                {
+                                    value: '3'
+                                }
+                            ]
+                        }, {
+                            question: 'WTF',
+                            answers: [
+                                {
+                                    value: '1',
+                                    isCorrect: true
+                                },
+                                {
+                                    value: '2'
+                                },
+                                {
+                                    value: '3'
+                                }
+                            ]
+                        }, {
+                            question: 'WTF',
+                            answers: [
+                                {
+                                    value: '1',
+                                    isCorrect: true
+                                },
+                                {
+                                    value: '2'
+                                },
+                                {
+                                    value: '3'
+                                }
+                            ]
+                        }]
                     }
                 ]
             }
@@ -482,7 +488,7 @@ export default [
                 lessonName: 'Темперамент',
                 parts: [
                     {
-                        type:'theory',
+                        type: 'theory',
                         value: require('./configs/temperament.html')
                     },
                     {
@@ -632,7 +638,7 @@ export default [
                 lessonName: 'Воля',
                 parts: [
                     {
-                        type:'theory',
+                        type: 'theory',
                         value: require('./configs/volition.html')
                     },
                     {
