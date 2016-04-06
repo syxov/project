@@ -1,0 +1,39 @@
+<div ng-if-start="$ctrl.questionPart">
+    <ul class="pagination row">
+        <li ng-repeat="question in $ctrl.questions" ng-class="{active: question === $ctrl.activeQuestion}" ng-click="$ctrl.selectQuestion(question)">
+            <a>
+                {{$index + 1}}
+            </a>
+        </li>
+    </ul>
+    <div class="row">
+        <h3>{{$ctrl.activeQuestion.question}}</h3>
+        <ol>
+            <li ng-repeat="answer in $ctrl.activeQuestion.answers">
+                <input id="{{$index}}" type="checkbox" ng-model="answer.userSelect">
+                <label for="{{$index}}">{{answer.value}}</label>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="row" ng-if-end>
+    <button class="btn btn-default" ng-click="$ctrl.endTest()">
+        Готово
+    </button>
+</div>
+
+<div ng-if="!$ctrl.questionPart">
+    <div class="row" ng-repeat="question in $ctrl.questions">
+        <h3>{{$ctrl.activeQuestion.question}}</h3>
+        <ol>
+            <li ng-repeat="answer in question.answers">
+                <input id="{{$index}}" type="checkbox" ng-model="answer.userSelect" disabled>
+                <label ng-class="{
+                    'bg-danger': answer.userSelect != answer.isCorrect,
+                    'bg-success': answer.userSelect == answer.isCorrect && answer.isCorrect === true
+                }" for="{{$index}}">{{answer.value}}</label>
+            </li>
+        </ol>
+    </div>
+</div>

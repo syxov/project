@@ -9,6 +9,7 @@
             <div class="row">
                 <div ng-if="$ctrl.selectedPart.type === 'theory'" ng-bind-html="$ctrl.selectedPart.value" class="theory-block"></div>
                 <control-questions ng-if="$ctrl.selectedPart.type === 'controlQuestions'" questions="$ctrl.selectedPart.value"></control-questions>
+                <test ng-if="$ctrl.selectedPart.type === 'test'" questions="$ctrl.selectedPart.value"></test>
             </div>
             <div class="row">
                 <button class="btn btn-default" ng-click="$ctrl.nextPart()" ng-disabled="$ctrl.lastPartSelected()">

@@ -45,9 +45,69 @@ export default [
                 id: 2,
                 lessonName: 'Методы исследования в психологии',
                 parts: [
+                    // {
+                    //     type: 'theory',
+                    //     value: require('./configs/metods.html')
+                    // },
                     {
-                        type: 'theory',
-                        value: require('./configs/metods.html')
+                        type: 'test',
+                        value: [{
+                            question: 'WTF',
+                            answers: [
+                                {
+                                    value: '1',
+                                    isCorrect: true
+                                },
+                                {
+                                    value: '2'
+                                },
+                                {
+                                    value: '3'
+                                }
+                            ]
+                        },{
+                            question: 'WTF',
+                            answers: [
+                                {
+                                    value: '1',
+                                    isCorrect: true
+                                },
+                                {
+                                    value: '2'
+                                },
+                                {
+                                    value: '3'
+                                }
+                            ]
+                        },{
+                            question: 'WTF',
+                            answers: [
+                                {
+                                    value: '1',
+                                    isCorrect: true
+                                },
+                                {
+                                    value: '2'
+                                },
+                                {
+                                    value: '3'
+                                }
+                            ]
+                        },{
+                            question: 'WTF',
+                            answers: [
+                                {
+                                    value: '1',
+                                    isCorrect: true
+                                },
+                                {
+                                    value: '2'
+                                },
+                                {
+                                    value: '3'
+                                }
+                            ]
+                        }]
                     },
                     {
                         type: 'controlQuestions',
@@ -720,7 +780,7 @@ export default [
                         type: 'controlQuestions',
                         value: [
                             {
-                                question: 'Чтобы конфликтная ситуация переросла в конфлик необходим $.',
+                                question: 'Чтобы конфликтная ситуация переросла в конфликт необходим $.',
                                 answers: ['инцидент']
                             },
                             {
