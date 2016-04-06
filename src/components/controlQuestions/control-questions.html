@@ -19,9 +19,12 @@
         <span ng-repeat-start="part in result track by $index" ng-if="$even">
             {{part}}
         </span>
-        <s ng-if="$odd && !part.isCorrectAnswer" class="bg-danger">
-            {{part.userAnswer || "Nothing has been inputed"}}
+        <s ng-if="$odd && !part.isCorrectAnswer && part.userAnswer" class="bg-danger">
+            {{part.userAnswer}}
         </s>
-        <span ng-if="$odd" ng-repeat-end class="bg-success">{{part.correctAnswer}}</span>
+        <span ng-if="$odd" ng-repeat-end ng-class="{
+            'bg-success': part.userAnswer,
+            'bg-danger': !part.userAnswer
+        }">{{part.correctAnswer}}</span>
     </li>
 </ol>
