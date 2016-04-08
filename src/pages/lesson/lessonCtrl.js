@@ -1,15 +1,26 @@
 export default function lessonCtrl($state, lessonsConfig) {
     const {sectionId, lessonId} = $state.params;
-    this.section = _.find(lessonsConfig, ({id}) => id === +sectionId);
-    this.lesson = _.find(this.section.lessons, ({id}) => id === +lessonId);
+    const [parsedSectionId, parsedLessonId] = [+sectionId, +lessonId];
+
+    this.section = _.find(lessonsConfig, ({id}) => id === parsedSectionId);
+    this.lesson = _.find(this.section.lessons, ({id}) => id === parsedLessonId);
     this.selectedPart = this.lesson.parts[0];
+
     let selectedPartIndex = 0;
 
     this.nextPart = function () {
-        this.selectedPart = this.lesson.parts[++selectedPartIndex];
-    };
-
-    this.lastPartSelected = function () {
-        return selectedPartIndex === this.lesson.parts.length - 1;
+        if (selectedPartIndex < this.lesson.parts.length - 1) {
+            this.selectedPart = this.lesson.parts[++selectedPartIndex];
+        } else if (this.lesson !== _.last(this.section.lessons)) {
+            $state.go('lesson', {
+                sectionId: parsedSectionId,
+                lessonId: this.lesson.id + 1
+            });
+        } else {
+            $state.go('lesson', {
+                sectionId: parsedSectionId + 1,
+                lessonId: 1
+            });
+        }
     };
 }
