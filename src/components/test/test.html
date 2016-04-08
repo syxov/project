@@ -31,8 +31,8 @@
             <li ng-repeat="answer in question.answers">
                 <input id="{{$index}}" type="checkbox" ng-model="answer.userSelect" disabled>
                 <label ng-class="{
-                    'bg-danger': answer.userSelect != answer.isCorrect,
-                    'bg-success': answer.userSelect == answer.isCorrect && answer.isCorrect === true
+                    'bg-danger': answer.isCorrect && answer.userSelect !== answer.isCorrect,
+                    'bg-success': answer.userSelect === answer.isCorrect && answer.isCorrect === true
                 }" for="{{$index}}">{{answer.value}}</label>
             </li>
         </ol>

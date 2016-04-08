@@ -1,7 +1,8 @@
-testCtrl.$inject = ['$uibModal'];
-export default function testCtrl(uibModal) {
+testCtrl.$inject = ['$scope', '$uibModal'];
+export default function testCtrl($scope, uibModal) {
     this.questionPart = true;
     this.activeQuestion = this.questions[0];
+
     this.selectQuestion = function (question) {
         this.activeQuestion = question;
     };
@@ -32,8 +33,16 @@ export default function testCtrl(uibModal) {
     };
 
     this.userAnsweredSmth = function (question) {
-        return question.answers.some(function (answer) {
-            return answer.userSelect;
-        });
+        return question.answers.some(({ userSelect }) => userSelect);
     };
+
+    $scope.$watch(
+        () => this.questions,
+        () => {
+            const activeQuestionIndex = this.questions.indexOf(this.activeQuestion);
+            this.questions = angular.copy(this.questions);
+            this.activeQuestion = this.questions[activeQuestionIndex];
+        },
+        true
+    );
 }
