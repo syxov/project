@@ -14,8 +14,8 @@
         <button class="btn btn-default" ng-click="$ctrl.endTest()">Закончить тест</button>
     </div>
     <div>
-        <h3>{{$ctrl.activeQuestion.question}}</h3>
-        <ol>
+        <h3 class="question">{{$ctrl.activeQuestion.question}}</h3>
+        <ol class="answer-block">
             <li ng-repeat="answer in $ctrl.activeQuestion.answers">
                 <input id="{{$index}}" type="checkbox" ng-model="answer.userSelect">
                 <label for="{{$index}}">{{answer.value}}</label>
@@ -26,7 +26,7 @@
 
 <div ng-if="!$ctrl.questionPart">
     <div ng-repeat="question in $ctrl.questions">
-        <h3>{{$ctrl.activeQuestion.question}}</h3>
+        <h3 class="question">{{$ctrl.activeQuestion.question}}</h3>
         <ol>
             <li ng-repeat="answer in question.answers">
                 <input id="{{$index}}" type="checkbox" ng-model="answer.userSelect" disabled>
