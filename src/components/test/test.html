@@ -27,6 +27,9 @@
 </div>
 
 <div ng-if="!$ctrl.questionPart">
+    <h4>
+        Вы прошли тест на {{$ctrl.percent}}%
+    </h4>
     <div ng-repeat="question in $ctrl.questions">
         <h3 class="question">{{$ctrl.activeQuestion.question}}</h3>
         <ol>
