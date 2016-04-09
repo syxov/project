@@ -23,6 +23,13 @@ export default function lessonCtrl($scope, $state, lessonsConfig) {
             });
         }
     };
+
+    this.hideNextButton = function () {
+        return selectedPartIndex >= this.lesson.parts.length - 1 &&
+            this.lesson === _.last(this.section.lessons) &&
+            !_.find(lessonsConfig, section => section.id === parsedSectionId + 1);
+    };
+
     $scope.$on('testStarted', () => this.hideNavButtons = true);
     $scope.$on('testEnded', () => this.hideNavButtons = false);
 }

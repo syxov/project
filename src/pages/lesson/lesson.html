@@ -12,7 +12,7 @@
                 <test ng-if="$ctrl.selectedPart.type === 'test'" questions="$ctrl.selectedPart.value"></test>
             </div>
             <div class="row" ng-hide="$ctrl.hideNavButtons">
-                <button class="btn btn-default" ng-click="$ctrl.nextPart()">
+                <button class="btn btn-default" ng-click="$ctrl.nextPart()" ng-if="!$ctrl.hideNextButton()">
                     Дальше
                 </button>
                 <button class="btn btn-default" ui-sref="index()">
