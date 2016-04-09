@@ -1957,6 +1957,7 @@ export default [
             {
                 id: 1,
                 lessonName: 'Тест',
+                realLessonName: 'Итоговый тест',
                 parts: [{
                     type: 'test',
                     value: [

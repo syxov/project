@@ -10,6 +10,8 @@
             ng-click="$ctrl.selectQuestion(question)">
             {{$index + 1}}
         </button>
+    </div>
+    <div class="navigation">
         <button class="btn btn-default" ng-disabled="$ctrl.isLastQuestionSelected()" ng-click="$ctrl.selectNextQuestion()">Следуюший вопрос</button>
         <button class="btn btn-default" ng-click="$ctrl.endTest()">Закончить тест</button>
     </div>
