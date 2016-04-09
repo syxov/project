@@ -1,4 +1,4 @@
-export default function lessonCtrl($state, lessonsConfig) {
+export default function lessonCtrl($scope, $state, lessonsConfig) {
     const {sectionId, lessonId} = $state.params;
     const [parsedSectionId, parsedLessonId] = [+sectionId, +lessonId];
 
@@ -23,4 +23,6 @@ export default function lessonCtrl($state, lessonsConfig) {
             });
         }
     };
+    $scope.$on('testStarted', () => this.hideNavButtons = true);
+    $scope.$on('testEnded', () => this.hideNavButtons = false);
 }

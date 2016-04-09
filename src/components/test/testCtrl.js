@@ -1,5 +1,4 @@
-testCtrl.$inject = ['$scope', '$uibModal'];
-export default function testCtrl($scope, uibModal) {
+export default function testCtrl($scope, $uibModal) {
     this.questionPart = true;
     this.activeQuestion = this.questions[0];
 
@@ -10,13 +9,17 @@ export default function testCtrl($scope, uibModal) {
     this.endTest = function () {
         if (this.userAnsweredOnAllQuestions()) {
             this.questionPart = false;
+            $scope.$emit('testEnded');
         } else {
-            uibModal.open({
+            $uibModal.open({
                 template: require('./popup/popup.html'),
                 bindToController: true,
                 controllerAs: '$ctrl',
                 controller: 'popupCtrl'
-            }).result.then(() => this.questionPart = false);
+            }).result.then(() => {
+                this.questionPart = false;
+                $scope.$emit('testEnded');
+            });
         }
     };
 
@@ -45,4 +48,6 @@ export default function testCtrl($scope, uibModal) {
         },
         true
     );
+
+    $scope.$emit('testStarted');
 }

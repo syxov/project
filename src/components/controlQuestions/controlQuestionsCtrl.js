@@ -1,5 +1,4 @@
-controlQuestionsCtrl.$inject = [];
-export default function controlQuestionsCtrl() {
+export default function controlQuestionsCtrl($scope) {
     this.questionPart = true;
     
     this.splitQuestion = function (question) {
@@ -9,6 +8,7 @@ export default function controlQuestionsCtrl() {
     this.endTest = function () {
         this.questionPart = false;
         this.computeUserAnswers();
+        $scope.$emit('testEnded');
     };
 
     this.computeUserAnswers = function () {
@@ -78,6 +78,8 @@ export default function controlQuestionsCtrl() {
         const lowerCasedRealAnswer = realAnswer.trim().toLowerCase();
         return levenshtein(lowerCasedUserAnswer, lowerCasedRealAnswer) <= 2;
     }
+
+    $scope.$emit('testStarted');
 
     /**
      * @param {string} s1 Исходная строка

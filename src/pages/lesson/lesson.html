@@ -11,7 +11,7 @@
                 <control-questions ng-if="$ctrl.selectedPart.type === 'controlQuestions'" questions="$ctrl.selectedPart.value"></control-questions>
                 <test ng-if="$ctrl.selectedPart.type === 'test'" questions="$ctrl.selectedPart.value"></test>
             </div>
-            <div class="row">
+            <div class="row" ng-hide="$ctrl.hideNavButtons">
                 <button class="btn btn-default" ng-click="$ctrl.nextPart()">
                     Дальше
                 </button>
